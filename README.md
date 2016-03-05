@@ -1,7 +1,9 @@
-[![Build Status](https://travis-ci.org/blar/filesystem.png?branch=master)](https://travis-ci.org/blar/filesystem)
-[![Coverage Status](https://coveralls.io/repos/blar/filesystem/badge.png?branch=master)](https://coveralls.io/r/blar/filesystem?branch=master)
+[![License](https://poser.pugx.org/blar/filesystem/license)](https://packagist.org/packages/blar/filesystem)
+[![Latest Stable Version](https://poser.pugx.org/blar/filesystem/v/stable)](https://packagist.org/packages/blar/filesystem)
+[![Build Status](https://travis-ci.org/blar/filesystem.svg?branch=master)](https://travis-ci.org/blar/filesystem)
+[![Coverage Status](https://coveralls.io/repos/blar/filesystem/badge.svg?branch=master&service=github)](https://coveralls.io/github/blar/filesystem?branch=master)
 [![Dependency Status](https://gemnasium.com/blar/filesystem.svg)](https://gemnasium.com/blar/filesystem)
-[![Dependencies Status](https://depending.in/blar/filesystem.png)](http://depending.in/blar/filesystem)
+[![Flattr](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Blar&url=https%3A%2F%2Fgithub.com%2Fblar%2Farchive)
 
 # blar/filesystem
 
