@@ -142,9 +142,6 @@ class Item {
         return fileinode($this->getPath());
     }
 
-    public function getLinkTarget() {
-    }
-
     /**
      * @param int $owner
      *
