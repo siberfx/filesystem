@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/blar/filesystem.svg?branch=master)](https://travis-ci.org/blar/filesystem)
 [![Coverage Status](https://coveralls.io/repos/blar/filesystem/badge.svg?branch=master&service=github)](https://coveralls.io/github/blar/filesystem?branch=master)
 [![Dependency Status](https://gemnasium.com/blar/filesystem.svg)](https://gemnasium.com/blar/filesystem)
-[![Flattr](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Blar&url=https%3A%2F%2Fgithub.com%2Fblar%2Farchive)
+[![Flattr](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Blar&url=https%3A%2F%2Fgithub.com%2Fblar%2Ffilesystem)
 
 # blar/filesystem
 
@@ -86,3 +86,18 @@ Filesystem functions for PHP.
 
     $file = new File('/etc/passwd');
     var_dump($file->isUploaded());
+
+
+## Installing
+
+### Dependencies
+
+[View Dependencies of blar/filesystem on gemnasium](https://gemnasium.com/blar/filesystem)
+
+### Installing with Composer
+
+    $ composer require blar/hash
+
+### Installing per Git
+
+    $ git clone https://github.com/blar/hash.git
