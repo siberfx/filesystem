@@ -224,7 +224,7 @@ class Item {
      *
      * @return bool
      */
-    public function hasPermissions(int $permissions): bool {
+    public function checkPermissions(int $permissions): bool {
         return ($this->getPermissions() & $permissions) == $permissions;
     }
 

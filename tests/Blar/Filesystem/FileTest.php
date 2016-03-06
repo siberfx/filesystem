@@ -66,13 +66,13 @@ class FileTest extends TestCase {
         # $file->setPermissions(0777);
 
         $file->setPermissions(File::PERMISSION_OWNER_ALL);
-        $this->assertTrue($file->hasPermissions(0700));
+        $this->assertTrue($file->checkPermissions(0700));
 
         $file->setPermissions(File::PERMISSION_OWNER_ALL | File::PERMISSION_GROUP_READ);
-        $this->assertTrue($file->hasPermissions(0740));
+        $this->assertTrue($file->checkPermissions(0740));
 
         $file->setPermissions(File::PERMISSION_OWNER_ALL | File::PERMISSION_GROUP_READ | File::PERMISSION_GROUP_WRITE | File::PERMISSION_OTHER_READ);
-        $this->assertTrue($file->hasPermissions(0764));
+        $this->assertTrue($file->checkPermissions(0764));
     }
 
     public function testSlice() {
