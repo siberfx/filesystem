@@ -166,14 +166,15 @@ class TempFileTest extends TestCase {
 
     public function testDontAutoremoveIfSwapped() {
         $file1 = new TempFile();
-        $file1->setContent('foobar');
+        $file1->setContent('foo');
+        $this->assertTrue($file1->exists());
 
         $file2 = new File($file1->getPath());
         $file1->unlink();
-        $file2->setContent('foobar');
+        $this->assertFalse($file1->exists());
 
+        $file2->setContent('bar');
         unset($file1);
-
         $this->assertTrue($file2->exists());
     }
 
