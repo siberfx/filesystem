@@ -96,8 +96,8 @@ Filesystem functions for PHP.
 
 ### Installing with Composer
 
-    $ composer require blar/hash
+    $ composer require blar/filesystem
 
 ### Installing per Git
 
-    $ git clone https://github.com/blar/hash.git
+    $ git clone https://github.com/blar/filesystem.git
