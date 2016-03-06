@@ -174,12 +174,10 @@ class TempFileTest extends TestCase {
         $this->assertSame('foobar', $file2->getContent());
     }
 
-    /*
-    public function testSetGroup() {
-        $this->markTestSkipped('Search a valid group for test');
-        # $file = new TempFile();
-        # $file->setGroupName('foobar');
+    public function testSetAndGetGroupId() {
+        $file = new TempFile();
+        $groupId = $file->getGroupId();
+        $file->setGroupId($groupId);
     }
-    */
 
 }
