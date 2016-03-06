@@ -122,4 +122,12 @@ class FileTest extends TestCase {
         $file->unlink();
     }
 
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testFactory() {
+        Item::factory('foobar');
+    }
+
+
 }

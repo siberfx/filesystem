@@ -156,9 +156,25 @@ class TempFileTest extends TestCase {
 
     public function testAutoremove() {
         $file1 = new TempFile();
+        $file1->setContent('foobar');
+
+        $file2 = new File($file1->getPath());
+        unset($file1);
+
+        $this->assertFalse($file2->exists());
+    }
+
+    public function testDontAutoremoveIfSwapped() {
+        $file1 = new TempFile();
+        $file1->setContent('foobar');
+
         $file2 = new File($file1->getPath());
         $file1->unlink();
         $file2->setContent('foobar');
+
+        unset($file1);
+
+        $this->assertTrue($file2->exists());
     }
 
     public function testHardlink() {
@@ -178,6 +194,46 @@ class TempFileTest extends TestCase {
         $file = new TempFile();
         $groupId = $file->getGroupId();
         $file->setGroupId($groupId);
+    }
+
+    public function testGetSizeAndCount() {
+        $file = new TempFile();
+
+        $file->setContent('foo');
+        $file->clearStatCache();
+
+        $this->assertSame(3, $file->getSize());
+        $this->assertSame(3, count($file));
+
+        $file->append('bar');
+        $file->clearStatCache();
+
+        $this->assertSame(6, $file->getSize());
+        $this->assertSame(6, count($file));
+    }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testSetOwnerId() {
+        $file = new TempFile();
+        $file->setOwnerId(0);
+    }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testSetGroupId() {
+        $file = new TempFile();
+        $file->setGroupId(0);
+    }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testSetGroupName() {
+        $file = new TempFile();
+        $file->setGroupName('nobody');
     }
 
 }

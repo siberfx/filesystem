@@ -64,7 +64,7 @@ class Item {
         if(is_file($path)) {
             return new File($path);
         }
-        $message = sprinf('Unsupported type of %s', $path);
+        $message = sprintf('Unsupported type of %s', $path);
         throw new RuntimeException($message);
     }
 
@@ -148,7 +148,7 @@ class Item {
      * @throws RuntimeException
      */
     public function setOwnerId(int $owner) {
-        $status = chown($this->getPath(), $owner);
+        $status = @chown($this->getPath(), $owner);
         if(!$status) {
             $message = sprintf('Cannot set owner of file %s to %u', $this->getPath(), $owner);
             throw new RuntimeException($message);
@@ -168,7 +168,7 @@ class Item {
      * @throws RuntimeException
      */
     public function setGroupId(int $group) {
-        $status = chgrp($this->getPath(), $group);
+        $status = @chgrp($this->getPath(), $group);
         if(!$status) {
             $message = sprintf('Cannot change group of file %s to %u', $this->getPath(), $group);
             throw new RuntimeException($message);
@@ -181,7 +181,7 @@ class Item {
      * @throws RuntimeException
      */
     public function setGroupName(string $group) {
-        $status = chgrp($this->getPath(), $group);
+        $status = @chgrp($this->getPath(), $group);
         if(!$status) {
             $message = sprintf('Cannot change group of file %s to %s', $this->getPath(), $group);
             throw new RuntimeException($message);
